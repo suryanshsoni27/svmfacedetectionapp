@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {%block bodyblock%}
+
+<div class="container">
+    <br>
+    <h3 class="content">
+        Classifier</h3>
+</div>
+
+<div>
+    <form action="#" method="POST" enctype="multipart/form-data">
+        <label for="upload">Upload</label>
+        <input type="file" id="upload" name="image" required="true">
+        <input type="submit" value="upload and predict">
+
+    </form>
+
+
+
+</div>
+
+{% if  fileupload %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <img src="{{url_for( 'static',filename='upload/' )}}{{img_name}}" alt="freeai" width = "{{w}}" height = "300">
+        </div>
+        <div class="col-6">
+            <img src="{{url_for( 'static',filename='predict/' )}}{{img_name}}"  alt="freeai" width =  "{{w}}" height = "300">
+        </div>
+    </div>
+</div>
+</div> 
+
+{% endif %}
+{% endblock %}
